@@ -40,6 +40,7 @@ int main() {
   // Read map data
   Map map;
   if (!read_map_data("../data/map_data.txt", map)) {
+  // if (!read_map_data("data/map_data.txt", map)) { // Use this to debug
     std::cout << "Error: Could not open map file" << std::endl;
     return -1;
   }
@@ -100,7 +101,7 @@ int main() {
           std::istream_iterator<float>(),
           std::back_inserter(y_sense));
 
-          for (int i = 0; i < x_sense.size(); ++i) {
+          for (unsigned i = 0; i < x_sense.size(); ++i) {
             LandmarkObs obs;
             obs.x = x_sense[i];
             obs.y = y_sense[i];
